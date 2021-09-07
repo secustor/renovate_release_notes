@@ -1,7 +1,70 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
+  "rangeStrategy": "pin",
+  "branchPrefix": "renovate-",
+  "branchTopic": "update-dependencies",
+  "commitMessage": "update dependencies",
+  "rebaseWhen": "behind-base-branch",
+  "recreateClosed": true,
+  "schedule": [
+    "at any time"
+  ],
+  "timezone": "Europe/Prague",
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "hashicorp/terraform"
+      ],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": [
+        "required_provider"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump"
+      ],
+      "groupName": "terraform providers"
+    },
+    {
+      "matchDepTypes": [
+        "helm_release"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump"
+      ],
+      "groupName": "terraform helm charts"
+    },
+    {
+      "matchDepTypes": [
+        "module"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump"
+      ],
+      "groupName": "terraform modules"
+    }
   ],
   "prHourlyLimit": "10",
   "lockFileMaintenance": {
