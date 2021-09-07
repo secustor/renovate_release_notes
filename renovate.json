@@ -2,8 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rangeStrategy": "pin",
   "branchPrefix": "renovate-",
-  "branchTopic": "update-dependencies",
-  "commitMessage": "update dependencies",
   "rebaseWhen": "behind-base-branch",
   "recreateClosed": true,
   "schedule": [
