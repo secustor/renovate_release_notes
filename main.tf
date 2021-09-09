@@ -2,11 +2,11 @@ terraform {
   required_providers {
     aws = {
       source  = "aws"
-      version = "3.0.0"
+      version = "3.56.0"
     }
     azurerm = {
       source  = "azurerm"
-      version = "~> 2.50"
+      version = "~> 2.74"
     }
     random = {
       version = "~> 2.2"
